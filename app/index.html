@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="HydrantWiki" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="HydrantWiki" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="HydrantWiki" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="HydrantWiki" class="no-js"> <!--<![endif]-->
+<head>
+    <title>HydrantWiki</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="HydrantWiki Tagging Application">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- CDN Hosted 3rd Party -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+
+    <!-- Self Hosted 3rd Party  -->
+    <script src="components/lockr.min.js"></script>
+    <script src="components/loki/lokijs.js"></script>
+    <script src="components/version/version.js"></script>
+    <script src="components/version/version-directive.js"></script>
+    <script src="components/version/interpolate-filter.js"></script>
+
+    <!-- App Specific CSS -->
+    <link rel="stylesheet" href="app.css">
+
+    <!-- App Specific javascript -->
+    <script src="app.js"></script>
+
+    <!-- App Specific Services -->
+    <script src="services/authservice.js"></script>
+    <script src="services/tagservice.js"></script>
+    <script src="services/localdbservice.js"></script>
+
+    <!-- App Specific Controllers -->
+    <script src="controllers/logincontroller.js"></script>
+    <script src="controllers/logoutcontroller.js"></script>
+    <script src="controllers/nearcontroller.js"></script>
+    <script src="controllers/tagcontroller.js"></script>
+</head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div ng-view class="col-md-12"></div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="col-xs-8 col-sm-6 col-md-4 col-lg-2">Angular seed app: v<span app-version></span></div>
+            </div>
+        </footer>
+    </body>
+</html>
