@@ -19,11 +19,18 @@ hydrantWikiApp.factory('authService', function($http) {
             }
         },
         login: function (user) {
-            return $http.post('/rest/login', user)
-                .then(function (response) {
+            var url = HW_URL + '/rest/authorize'
+            return $http({
+                method: 'POST',
+                url: url,
+                headers: {
+                    'Username': user.username,
+                    'Password': user.password
+                }
+            }).then(function (response) {
                     if (response.data.Result == "Success") {
-                        Lockr.set("Username", response.data.Username);
-                        Lockr.set("AuthToken", response.data.AuthToken);
+                        Lockr.set("Username", response.data.UserName);
+                        Lockr.set("AuthToken", response.data.AuthorizationToken);
 
                         service.isLoggedIn = true;
                     } else {

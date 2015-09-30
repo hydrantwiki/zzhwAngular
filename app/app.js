@@ -1,5 +1,7 @@
 'use strict';
 
+var HW_URL = "http://app.hydrantwiki.com";
+
 // Declare app level module which depends on views, and components
 var hydrantWikiApp = angular.module('HydrantWiki', [
   'ngRoute',
